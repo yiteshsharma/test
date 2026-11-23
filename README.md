@@ -21,7 +21,7 @@ Startup and GitHub errors are logged. Docker captures logs for `docker logs`.
 flowchart TD
 	request["GET /<username>"] --> valid{"One username segment?"}
 	valid -- No --> invalid["404 JSON<br/>Invalid path"]
-	valid -- Yes --> fetch["Fetch public Gists<br/>GitHub API · configured timeout"]
+	valid -- Yes --> fetch["Fetch public Gists<br/>GitHub API"]
 	fetch --> result{"GitHub response?"}
 	result -- Success --> success["200 JSON<br/>Gists list or []"]
 	result -- HTTP error --> http_error["Forward HTTP status<br/>JSON error"]
